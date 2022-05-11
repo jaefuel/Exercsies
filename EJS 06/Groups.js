@@ -32,7 +32,7 @@ class Group
     {
         let newGroup = new Group();
 
-        for (let e in obj)
+        for (let e of obj)
         {
             newGroup.add(e);
         }
