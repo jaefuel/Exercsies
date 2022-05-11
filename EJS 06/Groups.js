@@ -22,16 +22,22 @@ class Group
         
     }
 
-    has()
+    has(arg)
     {
-        if (this.group.includes(arg))
+        return this.group.includes(arg); 
+   
+    }
+
+    static from (obj)
+    {
+        let newGroup = new Group();
+
+        for (let e in obj)
         {
-            return true;
+            newGroup.add(e);
         }
-        else
-        {
-            return false;
-        }      
+
+        return newGroup;
     }
 }
 
