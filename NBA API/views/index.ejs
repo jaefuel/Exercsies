@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>NBA Legends!</h1>
+
+    <ul class="players">
+        <% for (let i = 0; i < list.length; i++){ 
+        %>
+        <li class="player">
+            <span><%= list[i].name %></span>:
+            <span><%= list[i].rating %></span>
+
+            <form>
+                <input id = "input-text" type="text" placeholder="Player rating">
+                <button id="update-button" value = "<%= list[i].name + "  " + list[i].rating%>" >Change rating</button>
+            </form>
+     
+            <button id="delete-button" value = "<%= list[i].name + "  " + list[i].rating%>" >Remove <%= list[i].name %></button>
+
+            
+
+        </li>
+        <%
+        }%>
+    </ul>
+    
+
+    <h1>Add a legend!</h1>
+
+    <form action = "/players" method="POST">
+        <input type="text" placeholder="Player name" name="name">
+        <input type="text" placeholder="Player rating" name="rating">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script src="/main.js"></script>
+</body>
+</html>
