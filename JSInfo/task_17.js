@@ -1,28 +1,25 @@
-function groupById(arr)
+function multiplyNumeric(obj)
 {
-    let newObj = {};
-
-    arr.forEach(e => {newObj[e.id] = e})
-
-    return newObj
+  for (let key in obj)
+  {
+    if (obj[key] == Number(obj[key]))
+    {
+      obj[key] *= 2;
+    }
+  }
 }
 
-let users = [
-    {id: 'john', name: "John Smith", age: 20},
-    {id: 'ann', name: "Ann Smith", age: 24},
-    {id: 'pete', name: "Pete Peterson", age: 31},
-  ];
-  
-  let usersById = groupById(users);
 
-  console.log(usersById)
-  
-  /*
-  // after the call we should have:
-  
-  usersById = {
-    john: {id: 'john', name: "John Smith", age: 20},
-    ann: {id: 'ann', name: "Ann Smith", age: 24},
-    pete: {id: 'pete', name: "Pete Peterson", age: 31},
-  }
-  */
+// before the call
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+multiplyNumeric(menu);
+
+// after the call
+
+console.log(menu)
+
