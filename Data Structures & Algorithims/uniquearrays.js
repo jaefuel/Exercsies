@@ -4,7 +4,7 @@
 
 function solve(arrays)
 {
-    let newArr = arrays.map(arr => new Set(arr).size).reduce((a,c) => a*c, 1)
+    let newArr = arrays.reduce((a,c) => a * new Set(c).size, 1)
 
     return newArr
 }
