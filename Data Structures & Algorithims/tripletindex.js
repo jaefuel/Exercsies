@@ -3,11 +3,8 @@
 
 function gimme(array)
 {
-    let arr = array.map((e,i) => [e,i]).sort((a,b) => a[0] - b[0])
 
-    console.log(arr)
-
-    return arr[1][1]
+    return array.map((e,i) => [e,i]).sort((a,b) => a[0] - b[0])[1][1]
 }
 
 console.log(gimme([5, 10, 14]))
