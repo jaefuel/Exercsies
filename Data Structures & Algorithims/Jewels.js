@@ -3,11 +3,18 @@
 
 function solve(jewels,stones)
 {
+
+    let solution = {};
     let count = 0;
 
-    for (c of stones)
+    for (j of jewels)
     {
-        if (jewels.includes(c))
+        solution[j] = true;
+    }
+
+    for (s of stones)
+    {
+        if (solution[s])
         {
             count++;
         }
