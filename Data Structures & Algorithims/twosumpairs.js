@@ -2,26 +2,19 @@
 
 function solve(arr, sum)
 {
-    let pairs = []
+    let pairs = [] 
 
-    let obj = {}
+    let obj = {} 
 
     for (num of arr)
     {
-        if(!obj[num] && !obj[sum-num])
+        if(obj[sum-num])
         {
-            obj[num] = sum - num;
+            pairs.push([num,sum-num])
         }
-    }
-
-    for (num in obj)
-    {
-        if (arr.includes(obj[num]))
+        else
         {
-            
-            pairs.push([Number(num),obj[num]])
-            
-            
+            obj[num] = 1
         }
     }
 
