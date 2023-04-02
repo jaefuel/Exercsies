@@ -18,8 +18,8 @@ toString.call(new Food("Papaya",7.50), "H-E-B");
 
 toString.apply(new Food("Papaya",7.50), ["H-E-B"]);
 
-const price = (function() {
-    return this.price;
-}).bind(new Food("Papaya",7.50));
+const price = (function(store) {
+    return this.price + " at " + store;
+}).bind(new Food("Papaya",7.50),"H-E-B");
 
-console.log(price());
+console.log(price("Walmart"));
