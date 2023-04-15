@@ -3,27 +3,23 @@
 function max(str)
 {
     let word = {};
-
-    let char = "";
-    let max = 0;
+    let charArray = [];
+    let valuesArray = [];
+    let maxValue = 0;
 
     for (c of str)
     {
         Object.keys(word).includes(c) ? word[c]++ : word[c] = 1;
     }
 
-    
 
-    Object.keys(word).forEach(k =>
-    {
-        if (word[k]> max)
-        {
-            max = word[k];
-            char = k;
-        }
-    })
+    charArray = Object.keys(word);
+    valuesArray = Object.values(word);
+    maxValue = Math.max(...valuesArray);
 
-    return char;
+
+
+    return charArray[valuesArray.indexOf(maxValue)]
 
 }
 
